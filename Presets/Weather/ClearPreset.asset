@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc22623442945e4ea3256194de2f4a0, type: 3}
+  m_Name: ClearPreset
+  m_EditorClassIdentifier: 
+  presetName: Clear
+  cameraParticlePrefab: {fileID: 0}
+  particleFadeDuration: 5
+  audioEffectsPrefab: {fileID: 0}
+  audioFadeDuration: 5
+  expanseCloudLayer: {fileID: 11400000, guid: da4821eeeeb975942a48b00acbfc65a9, type: 2}
+  skyInterpolateDuration: 8
+  fogInterpolateDuration: 5
+  fogVisibilityDistance: 2000
+  fogRadius: 0
+  fogThickness: 0
