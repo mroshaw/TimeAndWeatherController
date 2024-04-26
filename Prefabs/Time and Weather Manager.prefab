@@ -52,7 +52,7 @@ MonoBehaviour:
   m_textureB: {fileID: 6321764540669432510}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.962373
+  m_blend: 0.978713
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -542,9 +542,9 @@ MonoBehaviour:
   m_baseWarpVelocity: {x: 0, y: 0, z: 0}
   m_detailWarpVelocity: {x: 0, y: 0, z: 0}
   m_coverageOffset: {x: 0.24344315, y: 0.32876483}
-  m_baseOffset: {x: 7.6935296, y: -21.479317, z: 0}
-  m_structureOffset: {x: 0, y: -44.4925, z: 0}
-  m_detailOffset: {x: 0, y: -44.209435, z: 0}
+  m_baseOffset: {x: 7.6935296, y: -22.560001, z: 0}
+  m_structureOffset: {x: 0, y: -49.885643, z: 0}
+  m_detailOffset: {x: 0, y: -49.602577, z: 0}
   m_baseWarpOffset: {x: 0, y: 0, z: 0}
   m_detailWarpOffset: {x: 0, y: 0, z: 0}
   m_customPostProcessPasses: []
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_textureB: {fileID: 4928018111173741828}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.962373
+  m_blend: 0.978713
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -711,9 +711,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_name: Fog
   m_densityDistribution: 3
-  m_density: 123.98654
-  m_height: 0.0000007886757
-  m_thickness: 0.000000015773516
+  m_density: 124.5117
+  m_height: 7.16695e-12
+  m_thickness: 1.4333901e-13
   m_extinctionCoefficients: {r: 0.0000040156865, g: 0.0000040156865, b: 0.0000040156865,
     a: 0.000008}
   m_scatteringCoefficients: {r: 0.0000040156865, g: 0.0000040156865, b: 0.0000040156865,
@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_textureB: {fileID: 6121442974043350955}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.962373
+  m_blend: 0.978713
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -1260,8 +1260,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherProvider: {fileID: 8641964505199172975}
   timeProvider: {fileID: 3902023917404484359}
-  simulateTimeProgression: 1
-  rateOfTimeProgression: 1000
+  simulateTimeProgression: 0
+  rateOfTimeProgression: 250
   timeEvaluationFrequency: 5
   timeOfDayPresets:
   - {fileID: 11400000, guid: b6f4909198ec6e440938170e13db7488, type: 2}
@@ -1271,10 +1271,11 @@ MonoBehaviour:
   defaultTimeOfDayPreset: {fileID: 11400000, guid: b6f4909198ec6e440938170e13db7488,
     type: 2}
   automaticWeatherTransitions: 0
-  minTimeBetweenTransitions: 30
-  maxTimeBetweenTransitions: 180
+  minTimeBetweenTransitions: 10
+  maxTimeBetweenTransitions: 20
   weatherEvaluationFrequency: 5
   weatherPresets:
+  - {fileID: 11400000, guid: 85ba3f9fd61b6bf47ba326d25059f898, type: 2}
   - {fileID: 11400000, guid: 6c57afc4173a5ac459a81e44077bdc14, type: 2}
   - {fileID: 11400000, guid: 9721308702c1eab478a7f9f17d1eb323, type: 2}
   - {fileID: 11400000, guid: b183cfd0cdf298040ab0775c6251b094, type: 2}
@@ -1382,7 +1383,7 @@ MonoBehaviour:
   m_textureB: {fileID: 6895653614695870288}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.962373
+  m_blend: 0.978713
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -1525,9 +1526,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_fogBlock: {fileID: 4309518999305601317}
   m_color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
-  m_visibilityDistance: 2008.4714
-  m_radius: 0.0000007886757
-  m_thickness: 0.000000015773516
+  m_visibilityDistance: 2000.0001
+  m_radius: 7.16695e-12
+  m_thickness: 1.4333901e-13
   m_smog: 0
   m_glare: 0
   m_receiveDensityParticles: 0
@@ -1763,7 +1764,7 @@ MonoBehaviour:
   m_textureB: {fileID: 8000027853749036494}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.962373
+  m_blend: 0.978713
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -1861,7 +1862,7 @@ MonoBehaviour:
   m_textureB: {fileID: 540895683322755278}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.962373
+  m_blend: 0.978713
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -2068,7 +2069,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.93174344, g: 0.82290155, b: 0.66897035, a: 1}
+  m_Color: {r: 0.93174344, g: 0.8226494, b: 0.66867447, a: 1}
   m_Intensity: 123000
   m_Range: 10
   m_SpotAngle: 30
@@ -2283,7 +2284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LensFlareData: {fileID: 11400000, guid: 83969f6d7a294164f8408ec3397f1a40, type: 2}
-  intensity: 0.9742609
+  intensity: 0.9536762
   maxAttenuationDistance: 100
   maxAttenuationScale: 100
   distanceAttenuationCurve:

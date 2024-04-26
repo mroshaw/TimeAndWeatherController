@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc22623442945e4ea3256194de2f4a0, type: 3}
+  m_Name: SnowPreset
+  m_EditorClassIdentifier: 
+  presetName: Snow
+  cameraParticlePrefab: {fileID: 6896479103832840350, guid: badc96d035a617548922b77d5666825a,
+    type: 3}
+  particleFadeDuration: 5
+  audioEffectsPrefab: {fileID: 9158776829836244666, guid: 1a42ff30e58f3ce49b81b21b38c6566e,
+    type: 3}
+  audioFadeDuration: 5
+  canTransitionToWeatherPresets:
+  - CanTransitionToWeatherPreset: {fileID: 11400000, guid: b183cfd0cdf298040ab0775c6251b094,
+      type: 2}
+    InterpolationDuration: 10
+    ChanceOfOccuring: 0.5
+  - CanTransitionToWeatherPreset: {fileID: 11400000, guid: 9721308702c1eab478a7f9f17d1eb323,
+      type: 2}
+    InterpolationDuration: 10
+    ChanceOfOccuring: 0.5
+  expanseCloudLayer: {fileID: 11400000, guid: 3c9a4b314ff7f434b8a8c019b9a936d7, type: 2}
+  skyInterpolateDuration: 8
+  fogInterpolateDuration: 5
+  fogVisibilityDistance: 20
+  fogRadius: 2000
+  fogThickness: 5

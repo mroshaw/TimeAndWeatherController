@@ -25,8 +25,12 @@ MonoBehaviour:
   - CanTransitionToWeatherPreset: {fileID: 11400000, guid: b183cfd0cdf298040ab0775c6251b094,
       type: 2}
     InterpolationDuration: 10
-    ChanceOfOccuring: 0.7
+    ChanceOfOccuring: 0.5
   - CanTransitionToWeatherPreset: {fileID: 11400000, guid: 663ed9c295a8f364da901934ff27f678,
+      type: 2}
+    InterpolationDuration: 10
+    ChanceOfOccuring: 0.2
+  - CanTransitionToWeatherPreset: {fileID: 11400000, guid: 85ba3f9fd61b6bf47ba326d25059f898,
       type: 2}
     InterpolationDuration: 10
     ChanceOfOccuring: 0.2
