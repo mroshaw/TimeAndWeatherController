@@ -43,7 +43,7 @@ namespace DaftAppleGames.Common.Weather
             expanseCloudLayerInterpolator.m_transitionTime = isImmediate? 0.1f : expanseWeatherPreset.skyInterpolateDuration;
 
             // Check if this is first weather, if so load default to give something to extrapolate from
-            if (expanseCloudLayerInterpolator.m_currentPreset == null)
+            if (expanseCloudLayerInterpolator.m_targetPreset == null)
             {
                 expanseCloudLayerInterpolator.LoadPreset(interpolatorPrimerPreset.expanseCloudLayer);
             }
@@ -65,7 +65,7 @@ namespace DaftAppleGames.Common.Weather
         /// <returns></returns>
         private IEnumerator ApplyWeatherPresetAsync(ExpanseWeatherPresetSettings expansePreset, Action transitionCompleteCallback)
         {
-            yield return new WaitForSeconds(0.5f);
+            // yield return new WaitForSeconds(0.5f);
             while (expanseCloudLayerInterpolator.IsInterpolating())
             {
                 yield return null;

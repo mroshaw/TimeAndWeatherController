@@ -304,7 +304,6 @@ namespace DaftAppleGames.Common.Weather
                 ParticleInstanceGameObject = particleInstanceGameObject;
                 ParticleSystem = particleInstanceGameObject.GetComponent<ParticleSystem>();
                 EmissionRate = particleInstanceGameObject.GetComponent<ParticleSystem>().emission.rateOverTime.constant;
-
             }
         }
 
