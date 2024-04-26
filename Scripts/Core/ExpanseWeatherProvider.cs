@@ -3,23 +3,34 @@ using System.Collections;
 using Expanse;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace DaftAppleGames.Common.Weather
 {
-    public enum FogSetting { VisibiltyDistance, Radius, Thickness }
+    /// <summary>
+    /// This enum is used internally within the class to simplify the fog interpolation into a single method.
+    /// </summary>
+    internal enum FogSetting { VisibiltyDistance, Radius, Thickness }
     public class ExpanseWeatherProvider : WeatherProviderBase
     {
+        [Tooltip("The Expanse CloudLayerInterpolator component. Be sure to use the FullSkies (Interpolable) prefab from Expanse.")]
         [BoxGroup("Settings")] public CloudLayerInterpolator expanseCloudLayerInterpolator;
+        [Tooltip("The Expanse CreativeFog component from the Expanse FullSkies (Interpolable) prefab.")]
         [BoxGroup("Settings")] public CreativeFog expanseCreativeFog;
-        [BoxGroup("Settings")] public ExpanseWeatherPresetSettings defaultPreset;
+        [FormerlySerializedAs("primerPreset")]
+        [FormerlySerializedAs("defaultPreset")]
+        [Tooltip("The WeatherPresetSettings for an 'primer' Cloud Layer that the interpolator will use to then interpolate to the very first chosen default preset.")]
+        [BoxGroup("Settings")] public ExpanseWeatherPresetSettings interpolatorPrimerPreset;
 
         /// <summary>
-        /// Expanse implementation of Start Weather
+        /// Applies Weather presets with Expanse specific functionalty. That is, using the CloudLayerInterpolator to transition from one
+        /// CloudLayer to another. This method will also Lerp the VisibilityDistance, Radius and Thickness of the CreativeFog component.
+        /// Once complete, the transitionCompleteCallback is invoked, to signal we're done.
         /// </summary>
         /// <param name="weatherPreset"></param>
         /// <param name="transitionCompleteCallback"></param>
         /// <param name="isImmediate"></param>
-        public override void ApplyWeatherPresetProvider(WeatherPresetSettingsBase weatherPreset, Action transitionCompleteCallback, bool isImmediate)
+        protected override void ApplyWeatherPresetProvider(WeatherPresetSettingsBase weatherPreset, Action transitionCompleteCallback, bool isImmediate)
         {
             if (!(weatherPreset is ExpanseWeatherPresetSettings expanseWeatherPreset))
             {
@@ -34,7 +45,7 @@ namespace DaftAppleGames.Common.Weather
             // Check if this is first weather, if so load default to give something to extrapolate from
             if (expanseCloudLayerInterpolator.m_currentPreset == null)
             {
-                expanseCloudLayerInterpolator.LoadPreset(defaultPreset.expanseCloudLayer);
+                expanseCloudLayerInterpolator.LoadPreset(interpolatorPrimerPreset.expanseCloudLayer);
             }
 
             // Interpolate to the target settings
@@ -74,11 +85,18 @@ namespace DaftAppleGames.Common.Weather
         /// </summary>
         /// <param name="fogSetting"></param>
         /// <param name="expansePreset"></param>
-        public void ApplyFogSetting(FogSetting fogSetting, ExpanseWeatherPresetSettings expansePreset)
+        private void ApplyFogSetting(FogSetting fogSetting, ExpanseWeatherPresetSettings expansePreset)
         {
             StartCoroutine(ApplyFogSettingAsync(fogSetting, expansePreset));
         }
 
+        /// <summary>
+        /// Async method that Lerps the fog properties from and to targets that are determined by the 'initial'
+        /// state of the fog, and the values in the given preset.
+        /// </summary>
+        /// <param name="fogSetting"></param>
+        /// <param name="expansePreset"></param>
+        /// <returns></returns>
         private IEnumerator ApplyFogSettingAsync(FogSetting fogSetting, ExpanseWeatherPresetSettings expansePreset)
         {
             float time = 0;

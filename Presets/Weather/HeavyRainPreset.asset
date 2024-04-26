@@ -19,6 +19,15 @@ MonoBehaviour:
   audioEffectsPrefab: {fileID: 391242856606504698, guid: 9edd6b71824b0874bb5e8cfcb3cae669,
     type: 3}
   audioFadeDuration: 5
+  canTransitionToWeatherPresets:
+  - CanTransitionToWeatherPreset: {fileID: 11400000, guid: b183cfd0cdf298040ab0775c6251b094,
+      type: 2}
+    InterpolationDuration: 10
+    ChanceOfOccuring: 0.5
+  - CanTransitionToWeatherPreset: {fileID: 11400000, guid: 9721308702c1eab478a7f9f17d1eb323,
+      type: 2}
+    InterpolationDuration: 10
+    ChanceOfOccuring: 0.5
   expanseCloudLayer: {fileID: 11400000, guid: 3c9a4b314ff7f434b8a8c019b9a936d7, type: 2}
   skyInterpolateDuration: 8
   fogInterpolateDuration: 5

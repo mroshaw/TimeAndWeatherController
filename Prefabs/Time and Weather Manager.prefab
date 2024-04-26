@@ -124,8 +124,8 @@ Transform:
   m_GameObject: {fileID: 61265270329616768}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -108.03906, y: 5316.597, z: 65.84375}
-  m_LocalScale: {x: 200000, y: 300.27832, z: 200000}
+  m_LocalPosition: {x: -108.453125, y: 5317.7715, z: 65.78906}
+  m_LocalScale: {x: 200000, y: 300, z: 200000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7714699552292412272}
@@ -542,9 +542,9 @@ MonoBehaviour:
   m_baseWarpVelocity: {x: 0, y: 0, z: 0}
   m_detailWarpVelocity: {x: 0, y: 0, z: 0}
   m_coverageOffset: {x: 0.24344315, y: 0.32876483}
-  m_baseOffset: {x: 7.6935296, y: -21.39044, z: 0}
-  m_structureOffset: {x: 0, y: -44.04779, z: 0}
-  m_detailOffset: {x: 0, y: -43.764725, z: 0}
+  m_baseOffset: {x: 7.6935296, y: -21.419563, z: 0}
+  m_structureOffset: {x: 0, y: -44.19192, z: 0}
+  m_detailOffset: {x: 0, y: -43.908855, z: 0}
   m_baseWarpOffset: {x: 0, y: 0, z: 0}
   m_detailWarpOffset: {x: 0, y: 0, z: 0}
   m_customPostProcessPasses: []
@@ -1260,20 +1260,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherProvider: {fileID: 8641964505199172975}
   timeProvider: {fileID: 3902023917404484359}
-  defaultTimeOfDayPreset: {fileID: 11400000, guid: b6f4909198ec6e440938170e13db7488,
-    type: 2}
+  simulateTimeProgression: 0
+  rateOfTimeProgression: 1
+  timeEvaluationFrequency: 1
   timeOfDayPresets:
   - {fileID: 11400000, guid: b6f4909198ec6e440938170e13db7488, type: 2}
   - {fileID: 11400000, guid: 97240dd55986e744f8c0b8544baec14e, type: 2}
   - {fileID: 11400000, guid: 583c9e8064c61dd43957efb948d527e5, type: 2}
   - {fileID: 11400000, guid: 2bb4bf5ea703dc347b9ea1708de6adf8, type: 2}
-  defaultWeatherPreset: {fileID: 11400000, guid: 6c57afc4173a5ac459a81e44077bdc14,
+  defaultTimeOfDayPreset: {fileID: 11400000, guid: b6f4909198ec6e440938170e13db7488,
     type: 2}
+  automaticWeatherTransitions: 0
+  minTimeBetweenTransitions: 0
+  maxTimeBetweenTransitions: 0
+  weatherEvaluationFrequency: 1
   weatherPresets:
   - {fileID: 11400000, guid: 6c57afc4173a5ac459a81e44077bdc14, type: 2}
   - {fileID: 11400000, guid: 9721308702c1eab478a7f9f17d1eb323, type: 2}
   - {fileID: 11400000, guid: b183cfd0cdf298040ab0775c6251b094, type: 2}
   - {fileID: 11400000, guid: 663ed9c295a8f364da901934ff27f678, type: 2}
+  defaultWeatherPreset: {fileID: 11400000, guid: 6c57afc4173a5ac459a81e44077bdc14,
+    type: 2}
 --- !u!114 &3902023917404484359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1294,13 +1301,7 @@ MonoBehaviour:
   onMinutePassedEvent:
     m_PersistentCalls:
       m_Calls: []
-  onGotoHourStartEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  onGotoHourEndEventEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  onTimePresetAppliedEvent:
+  onTimeTransitionCompleteEvent:
     m_PersistentCalls:
       m_Calls: []
   onDayStartedEvent:
@@ -1327,7 +1328,8 @@ MonoBehaviour:
       m_Calls: []
   expanseCloudLayerInterpolator: {fileID: 6266062512329898426}
   expanseCreativeFog: {fileID: 2405311040246048103}
-  defaultPreset: {fileID: 11400000, guid: 54b5765dd6825514e9afe482a8c9d7b7, type: 2}
+  interpolatorPrimerPreset: {fileID: 11400000, guid: 54b5765dd6825514e9afe482a8c9d7b7,
+    type: 2}
 --- !u!1 &3760599717732358178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2281,7 +2283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LensFlareData: {fileID: 11400000, guid: 83969f6d7a294164f8408ec3397f1a40, type: 2}
-  intensity: 0.9730949
+  intensity: 1
   maxAttenuationDistance: 100
   maxAttenuationScale: 100
   distanceAttenuationCurve:

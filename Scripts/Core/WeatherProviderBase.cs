@@ -7,15 +7,19 @@ using UnityEngine.Events;
 
 namespace DaftAppleGames.Common.Weather
 {
+    /// <summary>
+    /// Provides core Weather / Sky / Cloud functionality for use across all providers.
+    /// </summary>
     public abstract class WeatherProviderBase : TimeAndWeatherProviderBase
     {
         [PropertyOrder(1)] [BoxGroup("Events")] public UnityEvent<WeatherPresetSettingsBase> onWeatherPresetAppliedEvent;
 
+        // Provides a lookup dictionary of instantiated prefabs by preset name
         private Dictionary<string, ParticleVfx> _particleVfxInstances;
         private Dictionary<string, AudioSfx> _audioSfxInstances;
+
         private ParticleVfx _currentParticleVfx;
         private AudioSfx _currentAudioSfx;
-
         private string _currentWeather = "";
         private Camera _mainCamera;
         private bool _isInTransition;
@@ -25,6 +29,11 @@ namespace DaftAppleGames.Common.Weather
         /// </summary>
         public bool IsIntransition => _isInTransition;
 
+        /// <summary>
+        /// To save time later, iterate over all possible prefabs associated to possible weather presets and
+        /// instantiate them and parent to the Main Camera. These can then be activated, deactivated and lerps by
+        /// accessiing them by preset name from the two Dictionaries.
+        /// </summary>
         private void Awake()
         {
             _mainCamera = Camera.main;
@@ -67,7 +76,9 @@ namespace DaftAppleGames.Common.Weather
         }
 
         /// <summary>
-        /// Start weather with given weather presets
+        /// Start weather with given weather presets. Check first if we're already in a transition. If not,
+        /// then lerp VFX and SFX, if they are provided, and then call the provider abstract method so the
+        /// provider can do whatever it needs to do.
         /// </summary>
         /// <param name="weatherPreset"></param>
         /// <param name="isImmediate"></param>
@@ -98,7 +109,7 @@ namespace DaftAppleGames.Common.Weather
         /// <summary>
         /// Call back action for provider to tell us the transition is done.
         /// </summary>
-        public void ProviderTransitionComplete()
+        private void ProviderTransitionComplete()
         {
             _isInTransition = false;
         }
@@ -109,10 +120,12 @@ namespace DaftAppleGames.Common.Weather
         /// <param name="weatherPreset"></param>
         /// <param name="transitionCompleteCallback"></param>
         /// <param name="isImmediate"></param>
-        public abstract void ApplyWeatherPresetProvider(WeatherPresetSettingsBase weatherPreset, Action transitionCompleteCallback, bool isImmediate);
+        protected abstract void ApplyWeatherPresetProvider(WeatherPresetSettingsBase weatherPreset, Action transitionCompleteCallback, bool isImmediate);
 
         /// <summary>
-        /// Plays associated weather sounds effects
+        /// Plays associated weather sounds effects by lerps to and from target volume. This uses the internal AudioSfx
+        /// class to store initial volume values for each prefab, allowing us to lerp to and from without losing the 'baseline'
+        /// volume state of each prefab
         /// </summary>
         /// <param name="weatherPreset"></param>
         private void PlayWeatherSfx(WeatherPresetSettingsBase weatherPreset)
@@ -131,10 +144,10 @@ namespace DaftAppleGames.Common.Weather
         }
 
         /// <summary>
-        /// Enables weather specific particle FX
+        /// Enables weather specific particle FX by lerping the emission rate over time. This uses the internal ParticleVfx
+        /// class to store 'baseline' emission rates, so we don't lose them when lerping to and from 0.
         /// </summary>
         /// <param name="weatherPreset"></param>
-        /// <param name="isImmediate"></param>
         private void EnableWeatherVfx(WeatherPresetSettingsBase weatherPreset)
         {
             // Stop current VFX
@@ -151,7 +164,7 @@ namespace DaftAppleGames.Common.Weather
         }
 
         /// <summary>
-        /// Fades the AudioSource
+        /// Synchronous wrapper for the asynch cooroutine responsible for fading the AudioSource in and out
         /// </summary>
         /// <param name="audioSfx"></param>
         /// <param name="fadeDuration"></param>
@@ -162,7 +175,8 @@ namespace DaftAppleGames.Common.Weather
         }
 
         /// <summary>
-        /// Fades the AudioSource over time, async
+        /// Fades the AudioSource over time by lerping between the 'baseline' volume, captured in an AudioSfx instance,
+        /// and 0.
         /// </summary>
         /// <param name="audioSfx"></param>
         /// <param name="fadeDuration"></param>
@@ -197,11 +211,24 @@ namespace DaftAppleGames.Common.Weather
             }
         }
 
+        /// <summary>
+        /// Synchronous wrapper for the asynchronous cooroutine for lerping ParticleSystem emission rate over time
+        /// </summary>
+        /// <param name="particleVfx"></param>
+        /// <param name="fadeDuration"></param>
+        /// <param name="fadeIn"></param>
         private void FadeParticleSystem(ParticleVfx particleVfx, float fadeDuration, bool fadeIn)
         {
             StartCoroutine(FadeParticleSystemAsync(particleVfx, fadeDuration, fadeIn));
         }
 
+        /// <summary>
+        /// Asynchronous lerping of particle system emission rates over time.
+        /// </summary>
+        /// <param name="particleVfx"></param>
+        /// <param name="fadeDuration"></param>
+        /// <param name="fadeIn"></param>
+        /// <returns></returns>
         private IEnumerator FadeParticleSystemAsync(ParticleVfx particleVfx, float fadeDuration, bool fadeIn)
         {
             float startValue = fadeIn ? 0 : particleVfx.EmissionRate;
@@ -234,6 +261,12 @@ namespace DaftAppleGames.Common.Weather
             }
         }
 
+        /// <summary>
+        /// Internal class that allows us to record 'baseline' states of all instantiated audio SFX prefabs.
+        /// This allows us to access the instantiated Game Object instance, and to know at all times what the
+        /// default or 'baseline' AudioSource volume was at the point of instantiation. This allows us to modify the
+        /// volume, and always be able to return it to it's baseline value.
+        /// </summary>
         private class AudioSfx
         {
             public GameObject AudioInstanceGameObject;
@@ -248,6 +281,12 @@ namespace DaftAppleGames.Common.Weather
             }
         }
 
+        /// <summary>
+        /// Internal class that allows us to record 'baseline' states of all instantiated particle VFX prefabs.
+        /// This allows us to access the instantiated Game Object instance, and to know at all times what the
+        /// default or 'baseline' ParticleSystem emissionRate was at the point of instantiation. This allows us to modify the
+        /// emissionRate, and always be able to return it to it's baseline value.
+        /// </summary>
         private class ParticleVfx
         {
             public GameObject ParticleInstanceGameObject;
