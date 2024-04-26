@@ -53,19 +53,22 @@ Presets are just instances of the provider Scriptable Objects, and can be create
 
 Most presets come with a "Transition Duration", which is a value in seconds used to Lerp from current settings to new preset settings. These can be adjusted individually, to allow you to get the effect you want.
 
+You'll also see that each weather preset has a list of other weather presets that it can transition to. This is to prevent "weird" transitions, like clear weather going straight to heavy snow. Though you can permit that transition if you so wish.
+
 Note that the "Audio Effect" and "Particle Effect" prefabs are all instantiated at Start(), and placed as children of the main camera. The particle effects are in world space, and so follow the camera around. The code comes with an example `AudioMixer`, with a separate `AudioMixerGroup` for the ambient sounds associated to the weather sound effects.
 
 # Current Features
 
 The latest code has these features:
 
-- Smooth time transition using `TimeAndWeatherManager.GotoTime()`
+- Smooth time transition to any time using `TimeAndWeatherManager.GotoTime()`
 - Smooth time transition using `TimeAndWeatherManager.ApplyTimePreset()`
 - Smooth weather transition using `TimeAndWeatherManager.ApplyWeatherPreset()`
 - Example audio and particle effects for a rain preset.
+- Example audio and particle effects for a snow preset.
 - Example time and weather presets.
-- Time simulation, with parameters to control rate of progression.
-- Framework for random weather transitions, with parameters to control allowed target presets, interpolation duration between presets, evaluation frequency for changes in weather.
+- Time simulation, with parameters to control rate of progression and evaluation frequency.
+- Random weather transitions with parameters to control allowed target presets, interpolation duration between presets, and evaluation frequency for changes in weather.
 
 # Other components
 
@@ -80,7 +83,6 @@ Some notable components include:
 
 These features are currently in the pipeline:
 
-- Random weather transitions.
 - Weather volumes - weather presets triggered when the player or camera enters a trigger collider area.
 - Indoor weather volumes - particle and ambient audio effects when the player or camera enters or exits a building.
 
