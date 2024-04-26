@@ -32,28 +32,40 @@ The rain and thunder audio is included under the "Attribution-NonCommercial 4.0 
 
 From a technical perspective, the system works off of a small number of core classes:
 
-- **TimeAndWeatherManager:MonoBehaviour** - this is the main manager class, implemented as a Singleton (whether you like it or not!), providing the main functionality of the controller. That is, public methods to control time and start new weather.
-- **WeatherProviderBase:MonoBehaviour** - this is a MonoBehavior abstract class that provides common weather methods, as well as setting the abstract method patterns for specific providers.
-- **TimeProviderBase:MonoBehaviour** - same as above, but for time methods.
-- **WeatherPresetSettingsBase:ScriptableObject** - this is a ScriptableObject class that provides a common data structure and methods for storing "weather presets". These are the core inputs into the WeatherProvider, and contain definitions of a weather behaviour.
-- **TimePresetSettingsBase:ScriptableObject** - same as above, but for time methods.
+- **`TimeAndWeatherManager:MonoBehaviour`** - this is the main manager class, implemented as a Singleton (whether you like it or not!), providing the main functionality of the controller. That is, public methods to control time and start new weather.
+- **`WeatherProviderBase:MonoBehaviour`** - this is a MonoBehavior abstract class that provides common weather methods, as well as setting the abstract method patterns for specific providers.
+- **`TimeProviderBase:MonoBehaviour`** - same as above, but for time methods.
+- **`WeatherPresetSettingsBase:ScriptableObject`** - this is a ScriptableObject class that provides a common data structure and methods for storing "weather presets". These are the core inputs into the WeatherProvider, and contain definitions of a weather behaviour.
+- **`TimePresetSettingsBase:ScriptableObject`** - same as above, but for time methods.
 
 We then have the Expanse implementation classes:
 
-- **ExpanseWeatherProvider:WeatherProviderBase** - this class provides abstract method definitions, and any custom methods specific to Expanse, to implement and apply weather profiles in Expanse.
-- **ExpanseTimeProvider:TimeProviderBase** - same as above, but for time methods.
-- **ExpanseWeatherPresetSettings:WeatherPresetSettingsBase** - this ScriptableObject class extends the base class to provide Expanse specific settings, required to define a specific weather preset.
-- **ExpanseTimePresetSettings:TimePresetSettingsBase** - you guessed it, same as above but for time.
+- **`ExpanseWeatherProvider:WeatherProviderBase`** - this class provides abstract method definitions, and any custom methods specific to Expanse, to implement and apply weather profiles in Expanse.
+- **`ExpanseTimeProvider:TimeProviderBase`** - same as above, but for time methods.
+- **`ExpanseWeatherPresetSettings:WeatherPresetSettingsBase`** - this ScriptableObject class extends the base class to provide Expanse specific settings, required to define a specific weather preset.
+- **`ExpanseTimePresetSettings:TimePresetSettingsBase`** - you guessed it, same as above but for time.
 
 The idea here is that you could create a new set of "Provider" classes, implementing different Time of Day and Sky / Weather providers, and it would all "just work" with the TimeAndWeatherManager.
 
 # Setting up presets
 
-Presets are just instances of the provider Scriptable Objects, and can be created via the Assets > Create > Daft Apple Games > Weather menu item. If you look in Assets\DaftAppleGames\TimeAndWeatherController\Presets, you'll find a number of these already created. The most interesting one is likely "HeavyRainPreset", which shows the extent of what's configurable for a weather preset. The "MidnightPreset" time preset shows how you can link time and weather, effectively enforcing a clear night sky as the time transitions to midnight.
+Presets are just instances of the provider Scriptable Objects, and can be created via the Assets > Create > Daft Apple Games > Weather menu item. If you look in `Assets\DaftAppleGames\TimeAndWeatherController\Presets`, you'll find a number of these already created. The most interesting one is likely "HeavyRainPreset", which shows the extent of what's configurable for a weather preset. The "MidnightPreset" time preset shows how you can link time and weather, effectively enforcing a clear night sky as the time transitions to midnight.
 
 Most presets come with a "Transition Duration", which is a value in seconds used to Lerp from current settings to new preset settings. These can be adjusted individually, to allow you to get the effect you want.
 
-Note that the "Audio Effect" and "Particle Effect" prefabs are all instantiated at Start(), and placed as children of the main camera. The particle effects are in world space, and so follow the camera around. The code comes with an example AudioMixer, with a separate AudioGroup for the ambient sounds associated to the weather sound effects.
+Note that the "Audio Effect" and "Particle Effect" prefabs are all instantiated at Start(), and placed as children of the main camera. The particle effects are in world space, and so follow the camera around. The code comes with an example `AudioMixer`, with a separate `AudioMixerGroup` for the ambient sounds associated to the weather sound effects.
+
+# Current Features
+
+The latest code has these features:
+
+- Smooth time transition using `TimeAndWeatherManager.GotoTime()`
+- Smooth time transition using `TimeAndWeatherManager.ApplyTimePreset()`
+- Smooth weather transition using `TimeAndWeatherManager.ApplyWeatherPreset()`
+- Example audio and particle effects for a rain preset.
+- Example time and weather presets.
+- Time simulation, with parameters to control rate of progression.
+- Framework for random weather transitions, with parameters to control allowed target presets, interpolation duration between presets, evaluation frequency for changes in weather.
 
 # Other components
 
@@ -61,17 +73,16 @@ There are a number of components that provide debugging functionality, and also 
 
 Some notable components include:
 
-- **TimeAndWeatherEvents** - this component that can be used across multiple scenes, and that provides some useful Unity Events to hook into other parts of your scene. For example, these can be used to send NPCs to bed as night approaches, or for farm animals to come to life as dawn breaks.
-- **WeatherSyncManager** - this component can be used to synchronise aspects of your weather and time with systems such as The Vegetation Engine and Microsplat. For example, to cause wetness to build in rain, or snow to accumulate during a heavy snow storm. This component is still in development.
+- **`TimeAndWeatherEvents`** - this component that can be used across multiple scenes, and that provides some useful Unity Events to hook into other parts of your scene. For example, these can be used to send NPCs to bed as night approaches, or for farm animals to come to life as dawn breaks.
+- **`WeatherSyncManager`** - this component can be used to synchronise aspects of your weather and time with systems such as The Vegetation Engine and Microsplat. For example, to cause wetness to build in rain, or snow to accumulate during a heavy snow storm. This component is still in development.
 
 # Coming up
 
 These features are currently in the pipeline:
 
-- Automatic time of day progression.
 - Random weather transitions.
-- Weather volumes.
-- Indoor weather volumes.
+- Weather volumes - weather presets triggered when the player or camera enters a trigger collider area.
+- Indoor weather volumes - particle and ambient audio effects when the player or camera enters or exits a building.
 
 # Some caveats
 
