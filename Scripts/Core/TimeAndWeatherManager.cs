@@ -72,7 +72,7 @@ namespace DaftAppleGames.Common.Weather
         [Tooltip("Automatically progress time when in run mode.")]
         [BoxGroup("Time Of Day")] public bool simulateTimeProgression;
         [Tooltip("The rate at which simulated time progresses. A value of 1 is real time, a value of 2 is twice as fast, and so on.")]
-        [BoxGroup("Time Of Day")] [Range(0, 1000)] public float rateOfTimeProgression = 1.0f;
+        [BoxGroup("Time Of Day")] [Range(0, 9999)] public float rateOfTimeProgression = 1.0f;
         [Tooltip("How frequently the simulated time is evaluated. A value of 1 is every frame, a value of 2 is every second frame, up to 60 which is once every 60 frames.")]
         [BoxGroup("Time Of Day")] [Range(1, 60)] public float timeEvaluationFrequency = 1.0f;
         [Tooltip("All time of day presets that can be applied or transitioned to by this particular manager instance.")]

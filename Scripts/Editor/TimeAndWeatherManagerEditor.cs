@@ -13,21 +13,12 @@ namespace DaftAppleGames.Editor
     public class TimeAndWeatherManagerEditor : OdinEditor
     {
         /// <summary>
-        /// This forces the OnInspectorGUI to run each frame
+        /// This forces the OnInspectorGUI to run each frame, refreshing the Inspector
         /// </summary>
         /// <returns></returns>
         public override bool RequiresConstantRepaint()
         {
             return true;
-        }
-
-        /// <summary>
-        /// Force a repaint of the inspector
-        /// </summary>
-        public override void OnInspectorGUI()
-        {
-            base.OnInspectorGUI();
-            Repaint();
         }
     }
 }

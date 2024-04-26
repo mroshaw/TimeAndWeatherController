@@ -52,7 +52,7 @@ MonoBehaviour:
   m_textureB: {fileID: 6321764540669432510}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.9996908
+  m_blend: 0.962373
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -145,151 +145,151 @@ MonoBehaviour:
   m_name: Cloud Volume
   m_curved: 1
   m_attenuationOrigin: {fileID: 0}
-  m_attenuationDistance: 10001.855
+  m_attenuationDistance: 10000
   m_attenuationBias: 30000
   m_rampUp: {x: 0, y: 0}
   m_noiseTextureQuality: 2
-  m_coverageIntensity: 0.22500402
-  m_structureIntensity: 0.04506154
-  m_structureMultiply: 0.23795114
-  m_detailIntensity: 0.03701917
-  m_detailMultiply: 0.9997155
-  m_baseWarpIntensity: 0.48285064
-  m_detailWarpIntensity: 0.5538287
+  m_coverageIntensity: 0.225
+  m_structureIntensity: 0.045
+  m_structureMultiply: 0.238
+  m_detailIntensity: 0.037
+  m_detailMultiply: 1
+  m_baseWarpIntensity: 0.483
+  m_detailWarpIntensity: 0.554
   m_densityCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.9996908
-      inSlope: 0.00006258488
-      outSlope: 0.00006258488
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.06666667
-      value: 0.99969494
-      inSlope: 0.0001309812
-      outSlope: 0.0001309812
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.13333334
-      value: 0.99970824
-      inSlope: 0.0002776086
-      outSlope: 0.0002776086
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.20000002
-      value: 0.99973196
-      inSlope: 0.00044345856
-      outSlope: 0.00044345856
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.26666668
-      value: 0.99976736
-      inSlope: 0.0011976064
-      outSlope: 0.0011976064
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.33333334
-      value: 0.99989164
-      inSlope: 0.001722872
-      outSlope: 0.001722872
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.40000004
-      value: 0.9999971
-      inSlope: 0.0007916984
-      outSlope: 0.0007916984
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.4666667
-      value: 0.9999972
-      inSlope: 0.0000022351744
-      outSlope: 0.0000022351744
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.53333336
-      value: 0.9999974
-      inSlope: 0.0000035762791
-      outSlope: 0.0000035762791
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.6
-      value: 0.9999977
-      inSlope: 0.0000049173836
-      outSlope: 0.0000049173836
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.6666667
-      value: 0.99999803
-      inSlope: 0.0000058114533
-      outSlope: 0.0000058114533
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.73333335
-      value: 0.99999845
-      inSlope: 0.0000062584854
-      outSlope: 0.0000062584854
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.8000001
-      value: 0.99999887
-      inSlope: 0.0000062584854
-      outSlope: 0.0000062584854
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.86666673
-      value: 0.9999993
-      inSlope: 0.0000058114533
-      outSlope: 0.0000058114533
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.9333334
-      value: 0.99999964
-      inSlope: 0.0000053644208
-      outSlope: 0.0000053644208
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -297,8 +297,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.000005364423
-      outSlope: 0.000005364423
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -311,144 +311,144 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.9996908
-      inSlope: 0.0013160704
-      outSlope: 0.0013160704
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.06666667
-      value: 0.9997785
-      inSlope: 0.0018265841
-      outSlope: 0.0018265841
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.13333334
-      value: 0.9999343
-      inSlope: 0.0016607342
-      outSlope: 0.0016607342
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.20000002
-      value: 0.99999994
-      inSlope: 0.0004667043
-      outSlope: 0.0004667043
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.26666668
-      value: 0.99999654
-      inSlope: -0.000084936626
-      outSlope: -0.000084936626
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.33333334
-      value: 0.9999886
-      inSlope: -0.00014618036
-      outSlope: -0.00014618036
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.40000004
-      value: 0.99997705
-      inSlope: -0.00019311902
-      outSlope: -0.00019311902
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.4666667
-      value: 0.99996287
-      inSlope: -0.00022619964
-      outSlope: -0.00022619964
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.53333336
-      value: 0.9999469
-      inSlope: -0.00024631622
-      outSlope: -0.00024631622
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.6
-      value: 0.99993
-      inSlope: -0.0002525747
-      outSlope: -0.0002525747
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.6666667
-      value: 0.9999132
-      inSlope: -0.00027269128
-      outSlope: -0.00027269128
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.73333335
-      value: 0.99989367
-      inSlope: -0.00044032908
-      outSlope: -0.00044032908
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.8000001
-      value: 0.9998545
-      inSlope: -0.0006920097
-      outSlope: -0.0006920097
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.86666673
-      value: 0.9998014
-      inSlope: -0.0008305908
-      outSlope: -0.0008305908
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.9333334
-      value: 0.99974376
-      inSlope: -0.00082969706
-      outSlope: -0.00082969706
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 0.9996908
-      inSlope: -0.0007948287
-      outSlope: -0.0007948287
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -458,7 +458,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_stochasticSampling: 0
   m_stochasticSamplingScale: 3.464
-  m_windSkew: {x: 0.99938154, y: -0.25}
+  m_windSkew: {x: 1, y: -0.25}
   m_noiseLayers:
   - procedural: 0
     texture: {fileID: 0}
@@ -514,26 +514,26 @@ MonoBehaviour:
     octaveScale: 2
     octaveMultiplier: 0.25
     tile: 4
-  m_density: 1261.4747
+  m_density: 1200
   m_extinctionCoefficients: {r: 0.000004, g: 0.000004, b: 0.000004, a: 1}
   m_scatteringCoefficients: {r: 0.000004, g: 0.000004, b: 0.000004, a: 1}
-  m_anisotropy: 0.3500974
-  m_silverIntensity: 0.45985776
-  m_silverSpread: 0.1460943
-  m_ambientHeightRange: {x: 0.00003092289, y: 1}
-  m_ambientStrengthRange: {x: 0.5000866, y: 1}
+  m_anisotropy: 0.35
+  m_silverIntensity: 0.46
+  m_silverSpread: 0.146
+  m_ambientHeightRange: {x: 0, y: 1}
+  m_ambientStrengthRange: {x: 0.5, y: 1}
   m_selfShadowing: 0
   m_maxSelfShadowDistance: 1500
-  m_shadowPersistence: 0.36792487
+  m_shadowPersistence: 0.368
   m_heightShadowRange: {x: 0, y: 0}
   m_heightShadowIntensity: {x: 0, y: 0}
   m_ambientShadowing: 0
-  m_multipleScatteringBias: 0.0000030922888
-  m_multipleScatteringReceptiveField: 0.10027831
+  m_multipleScatteringBias: 0
+  m_multipleScatteringReceptiveField: 0.1
   m_multipleScatteringMultiplier: 1
-  m_lightPollutionDimmer: 0.9996908
+  m_lightPollutionDimmer: 1
   m_castShadows: 1
-  m_maxShadowIntensity: 0.9500152
+  m_maxShadowIntensity: 0.9499999
   m_useOffset: 0
   m_coverageVelocity: {x: 0, y: 0}
   m_baseVelocity: {x: 0, y: -0.001, z: 0}
@@ -542,26 +542,26 @@ MonoBehaviour:
   m_baseWarpVelocity: {x: 0, y: 0, z: 0}
   m_detailWarpVelocity: {x: 0, y: 0, z: 0}
   m_coverageOffset: {x: 0.24344315, y: 0.32876483}
-  m_baseOffset: {x: 7.6935296, y: -21.419563, z: 0}
-  m_structureOffset: {x: 0, y: -44.19192, z: 0}
-  m_detailOffset: {x: 0, y: -43.908855, z: 0}
+  m_baseOffset: {x: 7.6935296, y: -21.479317, z: 0}
+  m_structureOffset: {x: 0, y: -44.4925, z: 0}
+  m_detailOffset: {x: 0, y: -44.209435, z: 0}
   m_baseWarpOffset: {x: 0, y: 0, z: 0}
   m_detailWarpOffset: {x: 0, y: 0, z: 0}
   m_customPostProcessPasses: []
   m_sampleJitter: 1
   m_pixelJitter: 0
   m_shadowSampleJitter: 0
-  m_coarseStepRange: {x: 8.0074215, y: 16.014843}
-  m_detailStepRange: {x: 16.014843, y: 32.029686}
+  m_coarseStepRange: {x: 8, y: 16}
+  m_detailStepRange: {x: 16, y: 32}
   m_stepDistanceRange: {x: 125, y: 15000}
   m_maxFlythroughDistance: 15000
-  m_LODDistances: {x: 14996.907, y: 29993.814}
-  m_mediaZeroThreshold: 0.0001002783
+  m_LODDistances: {x: 15000, y: 30000}
+  m_mediaZeroThreshold: 0.0001
   m_transmittanceZeroThreshold: 0.01
   m_maxConsecutiveZeroSamples: 8
   m_lightSamplingStrategy: 2
   m_reprojectionFrames: 2
-  m_denoisingHistoryFrames: 7
+  m_denoisingHistoryFrames: 8
   m_useTemporalDenoising: 0
   m_neighborhoodClamping: 0
   m_denoisingDepthRejection: 0
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_textureB: {fileID: 4928018111173741828}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.9996908
+  m_blend: 0.962373
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -711,9 +711,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_name: Fog
   m_densityDistribution: 3
-  m_density: 24.909231
-  m_height: 0.00074452657
-  m_thickness: 0.000014890531
+  m_density: 123.98654
+  m_height: 0.0000007886757
+  m_thickness: 0.000000015773516
   m_extinctionCoefficients: {r: 0.0000040156865, g: 0.0000040156865, b: 0.0000040156865,
     a: 0.000008}
   m_scatteringCoefficients: {r: 0.0000040156865, g: 0.0000040156865, b: 0.0000040156865,
@@ -1034,7 +1034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_autoMode: 1
-  m_transitionTime: 8
+  m_transitionTime: 0.1
   m_bypassOffset: 1
   m_currentPreset: {fileID: 11400000, guid: da4821eeeeb975942a48b00acbfc65a9, type: 2}
   m_targetPreset: {fileID: 0}
@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_textureB: {fileID: 6121442974043350955}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.9996908
+  m_blend: 0.962373
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -1260,9 +1260,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weatherProvider: {fileID: 8641964505199172975}
   timeProvider: {fileID: 3902023917404484359}
-  simulateTimeProgression: 0
-  rateOfTimeProgression: 1
-  timeEvaluationFrequency: 1
+  simulateTimeProgression: 1
+  rateOfTimeProgression: 1000
+  timeEvaluationFrequency: 5
   timeOfDayPresets:
   - {fileID: 11400000, guid: b6f4909198ec6e440938170e13db7488, type: 2}
   - {fileID: 11400000, guid: 97240dd55986e744f8c0b8544baec14e, type: 2}
@@ -1271,9 +1271,9 @@ MonoBehaviour:
   defaultTimeOfDayPreset: {fileID: 11400000, guid: b6f4909198ec6e440938170e13db7488,
     type: 2}
   automaticWeatherTransitions: 0
-  minTimeBetweenTransitions: 0
-  maxTimeBetweenTransitions: 0
-  weatherEvaluationFrequency: 1
+  minTimeBetweenTransitions: 30
+  maxTimeBetweenTransitions: 180
+  weatherEvaluationFrequency: 5
   weatherPresets:
   - {fileID: 11400000, guid: 6c57afc4173a5ac459a81e44077bdc14, type: 2}
   - {fileID: 11400000, guid: 9721308702c1eab478a7f9f17d1eb323, type: 2}
@@ -1382,7 +1382,7 @@ MonoBehaviour:
   m_textureB: {fileID: 6895653614695870288}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.9996908
+  m_blend: 0.962373
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -1525,9 +1525,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_fogBlock: {fileID: 4309518999305601317}
   m_color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
-  m_visibilityDistance: 9997.234
-  m_radius: 0.00074452657
-  m_thickness: 0.000014890531
+  m_visibilityDistance: 2008.4714
+  m_radius: 0.0000007886757
+  m_thickness: 0.000000015773516
   m_smog: 0
   m_glare: 0
   m_receiveDensityParticles: 0
@@ -1763,7 +1763,7 @@ MonoBehaviour:
   m_textureB: {fileID: 8000027853749036494}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.9996908
+  m_blend: 0.962373
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -1861,7 +1861,7 @@ MonoBehaviour:
   m_textureB: {fileID: 540895683322755278}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.9996908
+  m_blend: 0.962373
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -2283,7 +2283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LensFlareData: {fileID: 11400000, guid: 83969f6d7a294164f8408ec3397f1a40, type: 2}
-  intensity: 1
+  intensity: 0.9742609
   maxAttenuationDistance: 100
   maxAttenuationScale: 100
   distanceAttenuationCurve:
