@@ -19,7 +19,7 @@ To get the demo scenes to work, you'll need to add:
 ### Third party assets
 
 - Expanse (obviously)
-- Odin Inspector - I know this is not ideal, but it is such a great asset for very quickly making editor inspectors useful. You can get around this by removing the Odin attributes in source.
+- Odin Inspector (optional) - if you have Odin Inspector installed, you'll get a slightly improved editor experience. This is optional, and if not installed then the editor inspectors will fall back to a variant of Naughty Attributes that's included in the code.
 
 ### Unity packages
 
