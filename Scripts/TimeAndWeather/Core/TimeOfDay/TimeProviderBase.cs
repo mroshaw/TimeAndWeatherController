@@ -20,7 +20,6 @@ namespace DaftAppleGames.TimeAndWeather.Core.TimeOfDay
         [BoxGroup("Events")] public UnityEvent <int>onHourPassedEvent;
         [BoxGroup("Events")] public UnityEvent <int>onMinutePassedEvent;
         [BoxGroup("Events")] public UnityEvent<TimeOfDayPresetSettingsBase> onTimePresetAppliedEvent;
-        [BoxGroup("Events")] public UnityEvent onTimeTransitionCompleteEvent;
         [BoxGroup("Events")] public UnityEvent onDayStartedEvent;
         [BoxGroup("Events")] public UnityEvent onNightStartedEvent;
 
@@ -229,7 +228,6 @@ namespace DaftAppleGames.TimeAndWeather.Core.TimeOfDay
                 return;
             }
 
-            ApplyTimePresetProvider(timePreset, ProviderTransitionComplete);
             if (timePreset.timeInterpolationDuration == 0 || isImmediate)
             {
                 Hour = timePreset.hour;
@@ -241,6 +239,8 @@ namespace DaftAppleGames.TimeAndWeather.Core.TimeOfDay
                 GotoTime(timePreset);
             }
 
+            ApplyTimePresetProvider(timePreset, ProviderTransitionComplete);
+
             onTimePresetAppliedEvent.Invoke(timePreset);
         }
 
@@ -250,7 +250,6 @@ namespace DaftAppleGames.TimeAndWeather.Core.TimeOfDay
         private void ProviderTransitionComplete()
         {
             _isInTransition = false;
-            onTimeTransitionCompleteEvent.Invoke();
         }
 
         /// <summary>

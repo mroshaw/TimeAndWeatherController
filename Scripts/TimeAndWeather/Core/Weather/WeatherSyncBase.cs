@@ -10,7 +10,7 @@ namespace DaftAppleGames.TimeAndWeather.Core.Weather
 {
     /// <summary>
     /// Base class for functionality related to sync'ing aspects of weather with 3rd party tools
-    /// such as The Vegetation Engine and Microsplat
+    /// such as The Vegetation Engine and MicroSplat
     /// </summary>
     public abstract class WeatherSyncBase : TimeAndWeatherSyncBase
     {
