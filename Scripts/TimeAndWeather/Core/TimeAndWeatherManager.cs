@@ -9,6 +9,7 @@ using DaftAppleGames.TimeAndWeather.Core.TimeOfDay;
 using DaftAppleGames.TimeAndWeather.Core.Weather;
 
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace DaftAppleGames.TimeAndWeather.Core
 {
@@ -103,6 +104,13 @@ namespace DaftAppleGames.TimeAndWeather.Core
         [Tooltip("Initial weather preset that will be applied when the component first starts.")]
         [BoxGroup("Presets")] public WeatherPresetSettingsBase defaultWeatherPreset;
 
+        [FoldoutGroup("Weather Events")] public UnityEvent<WeatherPresetSettingsBase> onWeatherPresetAppliedEvent;
+        [FoldoutGroup("Time Events")] public UnityEvent<TimeAndWeatherPresetSettingsBase> onTimePresetAppliedEvent;
+        [FoldoutGroup("Time Events")] public UnityEvent<int> onHourPassedEvent;
+        [FoldoutGroup("Time Events")] public UnityEvent<int> onMinutePassedEvent;
+        [FoldoutGroup("Time Events")] public UnityEvent onDayTimeStartedEvent;
+        [FoldoutGroup("Time Events")] public UnityEvent onNightTimeStartedEvent;
+
         [BoxGroup("Providers")] public WeatherProviderBase weatherProvider;
         [BoxGroup("Providers")] public TimeProviderBase timeProvider;
 
@@ -111,14 +119,30 @@ namespace DaftAppleGames.TimeAndWeather.Core
         private float _timeAtLastEvaluation;
         private float _timeOfNextWeatherTransition;
 
-
         /// <summary>
-        /// Get references to the provider components.
+        /// Get references to the provider components and subscribe to events.
         /// </summary>
         private void OnEnable()
         {
             timeProvider = GetComponent<TimeProviderBase>();
             weatherProvider = GetComponent<WeatherProviderBase>();
+
+            // Subscribe to events
+            weatherProvider.onWeatherPresetAppliedEvent.AddListener(OnWeatherPresetAppliedProxy);
+            timeProvider.onTimePresetAppliedEvent.AddListener(OnTimePresetAppliedProxy);
+            timeProvider.onHourPassedEvent.AddListener(OnHourPassedProxy);
+            timeProvider.onMinutePassedEvent.AddListener(OnMinutePassedProxy);
+        }
+
+        /// <summary>
+        /// Unsubscribe from events when disabled.
+        /// </summary>
+        private void OnDisable()
+        {
+            weatherProvider.onWeatherPresetAppliedEvent.RemoveListener(OnWeatherPresetAppliedProxy);
+            timeProvider.onTimePresetAppliedEvent.RemoveListener(OnTimePresetAppliedProxy);
+            timeProvider.onHourPassedEvent.RemoveListener(OnHourPassedProxy);
+            timeProvider.onMinutePassedEvent.RemoveListener(OnMinutePassedProxy);
         }
 
         /// <summary>
@@ -161,6 +185,58 @@ namespace DaftAppleGames.TimeAndWeather.Core
             _timeAtLastEvaluation = Time.time;
 
             SetNextWeatherTransitionTime();
+        }
+
+        /// <summary>
+        /// Proxy to call weather applied event handler in Weather Provider.
+        /// </summary>
+        /// <param name="weatherSettings"></param>
+        private void OnWeatherPresetAppliedProxy(WeatherPresetSettingsBase weatherSettings)
+        {
+            onWeatherPresetAppliedEvent.Invoke(weatherSettings);
+        }
+
+        /// <summary>
+        /// Proxy to call time applied event handler in Time Provider.
+        /// </summary>
+        /// <param name="timeSettings"></param>
+        private void OnTimePresetAppliedProxy(TimeOfDayPresetSettingsBase timeSettings)
+        {
+            onTimePresetAppliedEvent.Invoke(timeSettings);
+        }
+
+        /// <summary>
+        /// Proxy to call hour passed event handler
+        /// </summary>
+        /// <param name="hour"></param>
+        private void OnHourPassedProxy(int hour)
+        {
+            onHourPassedEvent.Invoke(hour);
+        }
+
+        /// <summary>
+        /// Proxy to call hour passed event handler
+        /// </summary>
+        /// <param name="hour"></param>
+        private void OnMinutePassedProxy(int hour)
+        {
+            onMinutePassedEvent.Invoke(hour);
+        }
+
+        /// <summary>
+        /// Proxy to call daytime started handler
+        /// </summary>
+        private void OnDayTimeStartedProxy()
+        {
+            onDayTimeStartedEvent.Invoke();
+        }
+
+        /// <summary>
+        /// Proxy to call night time started event handler
+        /// </summary>
+        private void OnNightTimeStartedProxy()
+        {
+            onNightTimeStartedEvent.Invoke();
         }
 
         /// <summary>
@@ -294,6 +370,7 @@ namespace DaftAppleGames.TimeAndWeather.Core
             {
                 presetNames.Add(currSettings.presetName);
             }
+            presetNames.Sort();
             return presetNames;
         }
 
@@ -308,6 +385,7 @@ namespace DaftAppleGames.TimeAndWeather.Core
             {
                 presetNames.Add(currSettings.presetName);
             }
+            presetNames.Sort();
             return presetNames;
         }
 

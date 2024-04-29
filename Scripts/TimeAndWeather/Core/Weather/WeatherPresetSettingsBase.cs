@@ -12,11 +12,9 @@ namespace DaftAppleGames.TimeAndWeather.Core.Weather
     /// <summary>
     /// Base scriptable object for weather settings in the Time and Weather manager
     /// </summary>
-    public class WeatherPresetSettingsBase : ScriptableObject
+    public class WeatherPresetSettingsBase : TimeAndWeatherPresetSettingsBase
     {
         // Public serializable properties
-        [Tooltip("Plain text name of the weather preset. This must be unique amongst other presets selected for a given TimeAndWeatherManager.")]
-        [BoxGroup("General Settings")] public string presetName;
         [Tooltip("A prefab asset containing ParticleSystem components for the weather effect. This will be instantiated and parented to the Main Camera.")]
         [BoxGroup("Particle Effects")] public GameObject cameraParticlePrefab;
         [Tooltip("The duration in seconds that the particle emission rate will interpolate when activated and deactivated in a transition.")]
@@ -25,6 +23,19 @@ namespace DaftAppleGames.TimeAndWeather.Core.Weather
         [BoxGroup("Audio Effects")] public GameObject audioEffectsPrefab;
         [Tooltip("The duration in seconds that the AudioSource volume will interpolate when activated and deactivated in a transition.")]
         [BoxGroup("Audio Effects")] public float audioFadeDuration = 5.0f;
+
+        [Tooltip("Relative wetness of this preset, with 0 being dry / min wetness to 1 being max wetness.")]
+        [BoxGroup("Sync Settings")] [Range(0, 1)] public float wetness = 1.0f;
+        [Tooltip("Time in seconds that wetness will move to the target setting during sync.")]
+        [BoxGroup("Sync Settings")] public float wetnessSyncDuration;
+        [Tooltip("Relative overlay / snow of this preset, with 0 being no overlay to 1 being max.")]
+        [BoxGroup("Sync Settings")] [Range(0, 1)] public float overlay = 1.0f;
+        [Tooltip("Time in seconds that overlay / snow will move to the target setting during sync.")]
+        [BoxGroup("Sync Settings")] public float overlaySyncDuration;
+        [Tooltip("Relative strength of the wind of this preset, with 0 being no wind to 1 being max wind.")]
+        [BoxGroup("Sync Settings")] [Range(0, 1)] public float wind;
+        [Tooltip("Time in seconds that wind will move to the target setting during sync.")]
+        [BoxGroup("Sync Settings")] public float windSyncDuration;
         [Tooltip("A list of weather presets that will be considered for random transitions, when the random transition function is enabled.")]
         [BoxGroup("Transitions")] public List<WeatherTransition> canTransitionToWeatherPresets;
 

@@ -21,10 +21,10 @@ namespace DaftAppleGames.TimeAndWeather.Core
         /// </summary>
         private void Start()
         {
-            TimeAndWeatherManager.Instance.timeProvider.onDayStartedEvent.AddListener(OnDayStartedEventProxy);
-            TimeAndWeatherManager.Instance.timeProvider.onNightStartedEvent.AddListener(OnNightStartedEventProxy);
-            TimeAndWeatherManager.Instance.timeProvider.onHourPassedEvent.AddListener(OnHourPassedEventProxy);
-            TimeAndWeatherManager.Instance.timeProvider.onMinutePassedEvent.AddListener(OnMinutePassedEventProxy);
+            TimeAndWeatherManager.Instance.onDayTimeStartedEvent.AddListener(OnDayStartedEventProxy);
+            TimeAndWeatherManager.Instance.onNightTimeStartedEvent.AddListener(OnNightStartedEventProxy);
+            TimeAndWeatherManager.Instance.onHourPassedEvent.AddListener(OnHourPassedEventProxy);
+            TimeAndWeatherManager.Instance.onMinutePassedEvent.AddListener(OnMinutePassedEventProxy);
         }
 
         /// <summary>

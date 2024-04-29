@@ -19,6 +19,12 @@ MonoBehaviour:
   audioEffectsPrefab: {fileID: 391242856606504698, guid: 9edd6b71824b0874bb5e8cfcb3cae669,
     type: 3}
   audioFadeDuration: 5
+  wetness: 1
+  wetnessSyncDuration: 5
+  overlay: 0
+  overlaySyncDuration: 5
+  wind: 0.2
+  windSyncDuration: 5
   canTransitionToWeatherPresets:
   - CanTransitionToWeatherPreset: {fileID: 11400000, guid: b183cfd0cdf298040ab0775c6251b094,
       type: 2}

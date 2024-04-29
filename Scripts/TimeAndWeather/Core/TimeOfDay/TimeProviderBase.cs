@@ -19,6 +19,7 @@ namespace DaftAppleGames.TimeAndWeather.Core.TimeOfDay
         [BoxGroup("Event Settings")] public int nightStartTime = 20;
         [BoxGroup("Events")] public UnityEvent <int>onHourPassedEvent;
         [BoxGroup("Events")] public UnityEvent <int>onMinutePassedEvent;
+        [BoxGroup("Events")] public UnityEvent<TimeOfDayPresetSettingsBase> onTimePresetAppliedEvent;
         [BoxGroup("Events")] public UnityEvent onTimeTransitionCompleteEvent;
         [BoxGroup("Events")] public UnityEvent onDayStartedEvent;
         [BoxGroup("Events")] public UnityEvent onNightStartedEvent;
@@ -147,18 +148,15 @@ namespace DaftAppleGames.TimeAndWeather.Core.TimeOfDay
                 {
                     if (value != _currHour)
                     {
-                        Debug.Log("Another hour has passed...");
                         onHourPassedEvent.Invoke(value);
 
                         if (value == dayStartTime)
                         {
-                            Debug.Log("Daytime has come...");
                             onDayStartedEvent.Invoke();
                         }
 
                         if (value == nightStartTime)
                         {
-                            Debug.Log("Night has fallen...");
                             onNightStartedEvent.Invoke();
                         }
                     }
@@ -242,6 +240,8 @@ namespace DaftAppleGames.TimeAndWeather.Core.TimeOfDay
             {
                 GotoTime(timePreset);
             }
+
+            onTimePresetAppliedEvent.Invoke(timePreset);
         }
 
         /// <summary>
