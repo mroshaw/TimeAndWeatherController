@@ -2,37 +2,30 @@
 using Sirenix.OdinInspector.Editor;
 using UnityEditor;
 using DaftAppleGames.TimeAndWeather.Core;
+using DaftAppleGames.TimeAndWeather.Core.TimeOfDay;
 
 namespace DaftAppleGames.TimeAndWeather.Editor
 {
     /// This class is required in order to force a refresh of the [ShowInInspector] properties that are
     /// shown in the TimeAndWeatherManager inspector. While this isn't great for performance, this is not
     /// included nor executed in a build.
-    [CustomEditor(typeof(TimeAndWeatherManager))]
+    [CustomEditor(typeof(ExpanseTimeProvider))]
     #if ODIN_INSPECTOR
-    public class TimeAndWeatherManagerEditor : OdinEditor
+    public class ExpanseTimeProviderEditor : OdinEditor
     #else
         public class TimeAndWeatherManagerEditor : UnityEditor.Editor
     #endif
     {
         public override void OnInspectorGUI()
         {
-            TimeAndWeatherManager timeAndWeatherManager = target as TimeAndWeatherManager;
+            ExpanseTimeProvider timeProvider = target as ExpanseTimeProvider;
 
-            if (timeAndWeatherManager.timeProvider == null)
+            if (timeProvider.expanseDateTimeController == null)
             {
                 EditorGUILayout.HelpBox(
-                    "No time provider selected! Create an instance of a Time Provider in the hierarchy and drag into this component.",
+                    "No Date Time Controller component selected! Drag one in from the Expanse game object in your hierarchy.",
                     MessageType.Error);
             }
-
-            if (timeAndWeatherManager.weatherProvider == null)
-            {
-                EditorGUILayout.HelpBox(
-                    "No weather provider selected! Create an instance of a Weather Provider in the hierarchy and drag into this component.",
-                    MessageType.Error);
-            }
-
 #if ODIN_INSPECTOR
             DrawDefaultInspector();
 #else

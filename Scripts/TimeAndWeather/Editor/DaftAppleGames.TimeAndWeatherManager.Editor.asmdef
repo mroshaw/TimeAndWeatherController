@@ -2,7 +2,10 @@
     "name": "DaftAppleGames.TimeAndWeatherManager.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:b8c00c4eb5c828c45967b36030d25867"
+        "GUID:b8c00c4eb5c828c45967b36030d25867",
+        "GUID:af8257571fd1ce541a5f8cc844bd5277",
+        "GUID:56716a7e672fd3141972cc89841ed4fb",
+        "GUID:3c9181b8b85edfd449ebb8c3d9e6e3d9"
     ],
     "includePlatforms": [
         "Editor"
