@@ -6,7 +6,7 @@ using DaftAppleGames.Core.MetaAttributes;
 using DaftAppleGames.TimeAndWeather.Core.Weather;
 using UnityEngine;
 
-namespace DaftAppleGames.TimeAndWeather.Core
+namespace DaftAppleGames.TimeAndWeather.Core.Weather
 {
     /// <summary>
     /// Base class for functionality related to sync'ing aspects of weather with 3rd party tools
