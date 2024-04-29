@@ -1,5 +1,8 @@
+#if __MICROSPLAT__
 using DaftAppleGames.TimeAndWeather.Core.Weather;
+#if ODIN_INSPECTOR
 using Sirenix.OdinInspector.Editor;
+#endif
 using UnityEditor;
 
 namespace DaftAppleGames.TimeAndWeather.Editor
@@ -31,3 +34,4 @@ namespace DaftAppleGames.TimeAndWeather.Editor
         }
     }
 }
+#endif

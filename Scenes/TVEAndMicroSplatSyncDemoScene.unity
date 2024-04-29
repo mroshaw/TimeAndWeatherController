@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 998.96576, g: 1457.6656, b: 2019.3169, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3808,7 +3808,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d942819c252af874191594d1e27ba790, type: 2}
+  - {fileID: 2100000, guid: ba2983321c319e640986615ec6520335, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4141,7 +4141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d942819c252af874191594d1e27ba790, type: 2}
+  - {fileID: 2100000, guid: ba2983321c319e640986615ec6520335, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5343,17 +5343,22 @@ PrefabInstance:
     - target: {fileID: 4981645735126212432, guid: ce9ec6001bbd72e439db0b6ce6ac3a99,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.66867447
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4981645735126212432, guid: ce9ec6001bbd72e439db0b6ce6ac3a99,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.8226494
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4981645735126212432, guid: ce9ec6001bbd72e439db0b6ce6ac3a99,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.93174344
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981645735126212432, guid: ce9ec6001bbd72e439db0b6ce6ac3a99,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 123000
       objectReference: {fileID: 0}
     - target: {fileID: 5168927055228542161, guid: ce9ec6001bbd72e439db0b6ce6ac3a99,
         type: 3}
@@ -5414,6 +5419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700620581192500313, guid: ce9ec6001bbd72e439db0b6ce6ac3a99,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8902781842694960402, guid: ce9ec6001bbd72e439db0b6ce6ac3a99,
         type: 3}
