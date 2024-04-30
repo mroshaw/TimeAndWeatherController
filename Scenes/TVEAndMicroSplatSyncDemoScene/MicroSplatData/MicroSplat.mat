@@ -167,19 +167,20 @@ Material:
     - _SnowParticulateAngleMask: {r: -1, g: -1, b: 1, a: 1}
     - _SnowParticulateColor: {r: 1, g: 1, b: 1, a: 1}
     - _SnowParticulateHeightMask: {r: 0, g: 0, b: 99999, a: 99999}
-    - _SnowParticulateParams: {r: 1, g: 1, b: 1, a: 0.25}
+    - _SnowParticulateParams: {r: 1, g: 1, b: 1, a: 1}
     - _SnowParticulateShadow: {r: 0.01, g: 1, b: 0, a: 0}
     - _SnowParticulateShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _SnowTint: {r: 1, g: 1, b: 1, a: 1}
     - _SnowUVScales: {r: 50, g: 50, b: 0, a: 0}
     - _SnowUpVector: {r: 0, g: 1, b: 0, a: 0}
+    - _TriplanarUVScale: {r: 1, g: 1, b: 0, a: 0}
     - _UVScale: {r: 1, g: 1, b: 0, a: 0}
     - _WetnessParams: {r: 0, g: 1, b: 0, a: 0}
-    - _WindEmissive: {r: 0, g: 0, b: 0, a: 0}
+    - _WindEmissive: {r: 1, g: 0, b: 0, a: 0}
     - _WindParticulateAngleMask: {r: -1, g: -1, b: 1, a: 1}
     - _WindParticulateColor: {r: 1, g: 1, b: 1, a: 1}
     - _WindParticulateHeightMask: {r: 0, g: 0, b: 99999, a: 99999}
-    - _WindParticulateParams: {r: 1, g: 1, b: 1, a: 0.25}
+    - _WindParticulateParams: {r: 1, g: 1, b: 1, a: 2}
     - _WindParticulateShadow: {r: 0.01, g: 1, b: 0, a: 0}
     - _WindParticulateShadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
