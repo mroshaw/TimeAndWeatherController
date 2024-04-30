@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdc22623442945e4ea3256194de2f4a0, type: 3}
-  m_Name: DefaultPreset
+  m_Name: PrimerPreset
   m_EditorClassIdentifier: 
   presetName: Default
   cameraParticlePrefab: {fileID: 0}
