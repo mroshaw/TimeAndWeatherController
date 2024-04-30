@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7205263, g: 0.6573587, b: 0.68181616, a: 1}
+  m_IndirectSpecularColor: {r: 1.7422378, g: 1.1808568, b: 0.99157155, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3934,7 +3934,10 @@ MonoBehaviour:
   onTriggerVolumeExitEvent:
     m_PersistentCalls:
       m_Calls: []
-  weatherSettings: {fileID: 11400000, guid: dc21c826c64b8394bbd604b2de1bcdbd, type: 2}
+  onEnterWeatherSettings: {fileID: 11400000, guid: dc21c826c64b8394bbd604b2de1bcdbd,
+    type: 2}
+  onExitWeatherSettings: {fileID: 11400000, guid: b183cfd0cdf298040ab0775c6251b094,
+    type: 2}
 --- !u!4 &1328627144
 Transform:
   m_ObjectHideFlags: 0
@@ -3944,8 +3947,8 @@ Transform:
   m_GameObject: {fileID: 1328627142}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.11535719, z: -0, w: 0.9933241}
-  m_LocalPosition: {x: 9.892866, y: 2.5, z: -11.7230625}
-  m_LocalScale: {x: 10, y: 5, z: 10}
+  m_LocalPosition: {x: 10.4, y: 2.5, z: 7.4}
+  m_LocalScale: {x: 25, y: 5, z: 25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5283,7 +5286,7 @@ GameObject:
   - component: {fileID: 1944191826}
   - component: {fileID: 1944191827}
   m_Layer: 0
-  m_Name: Interior Trigger Volume
+  m_Name: Interior Trigger Volume - House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5545,6 +5548,50 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &2048828339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2048828341}
+  - component: {fileID: 2048828340}
+  m_Layer: 0
+  m_Name: Time and Weather Methods
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2048828340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048828339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 644f2e5c43e939541a8f2d0116b7b51d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2048828341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048828339}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2067265016
 GameObject:
   m_ObjectHideFlags: 0
@@ -5761,14 +5808,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067265016}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.18, y: 4.77, z: -12.99}
+  m_LocalRotation: {x: -0, y: 0.6689436, z: -0, w: 0.74331325}
+  m_LocalPosition: {x: -15.12, y: 4.77, z: 5.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1657790128}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 83.971, z: 0}
 --- !u!114 &2067265021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6279,7 +6326,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.7986903, g: 0.75138116, b: 0.6570803, a: 1}
+  m_Color: {r: 0.94515693, g: 0.8895278, b: 0.7783233, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -6706,7 +6753,7 @@ MonoBehaviour:
   m_textureB: {fileID: 3919593785503158042}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.93241197
+  m_blend: 0.93994504
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -6974,7 +7021,7 @@ MonoBehaviour:
   m_textureB: {fileID: 6836845728505074202}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.93241197
+  m_blend: 0.93994504
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -6996,7 +7043,7 @@ MonoBehaviour:
   m_textureB: {fileID: 7950784533255018628}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.93241197
+  m_blend: 0.93994504
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -7685,9 +7732,9 @@ MonoBehaviour:
   m_baseWarpVelocity: {x: 0, y: 0, z: 0}
   m_detailWarpVelocity: {x: 0, y: 0, z: 0}
   m_coverageOffset: {x: 0.24344315, y: 0.32876483}
-  m_baseOffset: {x: 7.6935296, y: -23.802666, z: 0}
-  m_structureOffset: {x: 0, y: -56.12581, z: 0}
-  m_detailOffset: {x: 0, y: -55.842743, z: 0}
+  m_baseOffset: {x: 7.6935296, y: -24.075983, z: 0}
+  m_structureOffset: {x: 0, y: -57.500385, z: 0}
+  m_detailOffset: {x: 0, y: -57.21732, z: 0}
   m_baseWarpOffset: {x: 0, y: 0, z: 0}
   m_detailWarpOffset: {x: 0, y: 0, z: 0}
   m_customPostProcessPasses: []
@@ -7803,7 +7850,7 @@ MonoBehaviour:
   m_textureB: {fileID: 7376895497606473066}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.93241197
+  m_blend: 0.93994504
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -7859,7 +7906,7 @@ MonoBehaviour:
   m_textureB: {fileID: 7284343657328152703}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.93241197
+  m_blend: 0.93994504
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -8220,7 +8267,7 @@ MonoBehaviour:
   m_textureB: {fileID: 8468810575042050768}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.93241197
+  m_blend: 0.93994504
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -8679,9 +8726,10 @@ SceneRoots:
   - {fileID: 2067265020}
   - {fileID: 1101100534}
   - {fileID: 30225302}
+  - {fileID: 1383768282}
   - {fileID: 1328627144}
   - {fileID: 1944191825}
-  - {fileID: 1383768282}
   - {fileID: 1754659727}
   - {fileID: 1829956375}
+  - {fileID: 2048828341}
   - {fileID: 7100942723631617086}
