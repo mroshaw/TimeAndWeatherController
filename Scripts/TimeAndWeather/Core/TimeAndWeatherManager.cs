@@ -106,7 +106,7 @@ namespace DaftAppleGames.TimeAndWeather.Core
         [BoxGroup("Presets")] public WeatherPresetSettingsBase defaultWeatherPreset;
 
         [FoldoutGroup("Weather Events")] public UnityEvent<WeatherPresetSettingsBase> onWeatherPresetAppliedEvent;
-        [FoldoutGroup("Time Events")] public UnityEvent<TimeAndWeatherPresetSettingsBase> onTimePresetAppliedEvent;
+        [FoldoutGroup("Time Events")] public UnityEvent<TimeOfDayPresetSettingsBase> onTimePresetAppliedEvent;
         [FoldoutGroup("Time Events")] public UnityEvent<int> onHourPassedEvent;
         [FoldoutGroup("Time Events")] public UnityEvent<int> onMinutePassedEvent;
         [FoldoutGroup("Time Events")] public UnityEvent onDayTimeStartedEvent;
@@ -164,6 +164,8 @@ namespace DaftAppleGames.TimeAndWeather.Core
                 timeProvider.onTimePresetAppliedEvent.AddListener(OnTimePresetAppliedProxy);
                 timeProvider.onHourPassedEvent.AddListener(OnHourPassedProxy);
                 timeProvider.onMinutePassedEvent.AddListener(OnMinutePassedProxy);
+                timeProvider.onDayStartedEvent.AddListener(OnDayTimeStartedProxy);
+                timeProvider.onNightStartedEvent.AddListener(OnNightTimeStartedProxy);
             }
         }
 
@@ -178,6 +180,8 @@ namespace DaftAppleGames.TimeAndWeather.Core
                 timeProvider.onTimePresetAppliedEvent.RemoveListener(OnTimePresetAppliedProxy);
                 timeProvider.onHourPassedEvent.RemoveListener(OnHourPassedProxy);
                 timeProvider.onMinutePassedEvent.RemoveListener(OnMinutePassedProxy);
+                timeProvider.onDayStartedEvent.RemoveListener(OnDayTimeStartedProxy);
+                timeProvider.onNightStartedEvent.RemoveListener(OnNightTimeStartedProxy);
             }
         }
 

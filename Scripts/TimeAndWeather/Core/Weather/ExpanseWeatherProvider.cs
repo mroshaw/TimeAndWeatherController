@@ -46,6 +46,7 @@ namespace DaftAppleGames.TimeAndWeather.Core.Weather
             // Check if this is first weather, if so load default to give something to extrapolate from
             if (expanseCloudLayerInterpolator.m_targetPreset == null)
             {
+                expanseCloudLayerInterpolator.m_transitionTime = 0.1f;
                 expanseCloudLayerInterpolator.LoadPreset(interpolatorPrimerPreset.expanseCloudLayer);
             }
 
