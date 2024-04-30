@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1.7183516, g: 1.1685263, b: 0.96482766, a: 1}
+  m_IndirectSpecularColor: {r: 0.681377, g: 0.62594634, b: 0.64701563, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -498,112 +498,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117278337}
   m_CullTransparentMesh: 1
---- !u!1 &143991564
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 143991565}
-  - component: {fileID: 143991568}
-  - component: {fileID: 143991567}
-  - component: {fileID: 143991566}
-  m_Layer: 0
-  m_Name: Plane
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
---- !u!4 &143991565
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143991564}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1383768282}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &143991566
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143991564}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &143991567
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143991564}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 257
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 16a206613ac32ca4d97c9adba2af31c3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &143991568
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143991564}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &332229150
 GameObject:
   m_ObjectHideFlags: 0
@@ -3675,7 +3569,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 143991565}
   - {fileID: 1639389583}
   - {fileID: 1358988697}
   - {fileID: 1406653346}
@@ -5205,7 +5098,7 @@ MonoBehaviour:
   m_textureB: {fileID: 3827110840327692062}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.92761195
+  m_blend: 0.986926
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -5242,7 +5135,7 @@ MonoBehaviour:
   m_textureB: {fileID: 6303654470710509364}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.92761195
+  m_blend: 0.986926
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -5817,9 +5710,9 @@ MonoBehaviour:
   m_baseWarpVelocity: {x: 0, y: 0, z: 0}
   m_detailWarpVelocity: {x: 0, y: 0, z: 0}
   m_coverageOffset: {x: 0.24344315, y: 0.32876483}
-  m_baseOffset: {x: 7.6935296, y: -21.739296, z: 0}
-  m_structureOffset: {x: 0, y: -45.79907, z: 0}
-  m_detailOffset: {x: 0, y: -45.516003, z: 0}
+  m_baseOffset: {x: 7.6935296, y: -21.913889, z: 0}
+  m_structureOffset: {x: 0, y: -46.674828, z: 0}
+  m_detailOffset: {x: 0, y: -46.39176, z: 0}
   m_baseWarpOffset: {x: 0, y: 0, z: 0}
   m_detailWarpOffset: {x: 0, y: 0, z: 0}
   m_customPostProcessPasses: []
@@ -5875,7 +5768,7 @@ MonoBehaviour:
   m_textureB: {fileID: 2615445581742005394}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.92761195
+  m_blend: 0.986926
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -6069,7 +5962,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.9444441, g: 0.88876116, b: 0.7774232, a: 1}
+  m_Color: {r: 0.7695696, g: 0.7240447, b: 0.6330422, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -6632,7 +6525,7 @@ MonoBehaviour:
   m_textureB: {fileID: 3941679585902742566}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.92761195
+  m_blend: 0.986926
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -7251,7 +7144,7 @@ MonoBehaviour:
   m_textureB: {fileID: 4493906668984197177}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.92761195
+  m_blend: 0.986926
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
@@ -7636,7 +7529,7 @@ MonoBehaviour:
   m_textureB: {fileID: 242826596242261456}
   m_staticTextureB: {fileID: 0}
   m_textureBStatic: 0
-  m_blend: 0.92761195
+  m_blend: 0.986926
   m_tileA: 1
   m_tileB: 1
   m_amortize: 1
