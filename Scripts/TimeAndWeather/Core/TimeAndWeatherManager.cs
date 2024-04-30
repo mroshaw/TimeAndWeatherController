@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Codice.CM.Common.Merge;
 #if ODIN_INSPECTOR
 using Sirenix.OdinInspector;
 #else
@@ -124,14 +125,46 @@ namespace DaftAppleGames.TimeAndWeather.Core
         /// </summary>
         private void OnEnable()
         {
-            timeProvider = GetComponent<TimeProviderBase>();
-            weatherProvider = GetComponent<WeatherProviderBase>();
+            // Try and grab a Time Provider and Weather Provider from the current gameobject, if we don't have one
+            // explicitly defined.
+            if (!timeProvider)
+            {
+                TimeProviderBase gameObjectTimeProvider = GetComponent<TimeProviderBase>();
+                if (gameObjectTimeProvider)
+                {
+                    timeProvider = gameObjectTimeProvider;
+                }
+            }
 
-            // Subscribe to events
-            weatherProvider.onWeatherPresetAppliedEvent.AddListener(OnWeatherPresetAppliedProxy);
-            timeProvider.onTimePresetAppliedEvent.AddListener(OnTimePresetAppliedProxy);
-            timeProvider.onHourPassedEvent.AddListener(OnHourPassedProxy);
-            timeProvider.onMinutePassedEvent.AddListener(OnMinutePassedProxy);
+            if (!weatherProvider)
+            {
+                WeatherProviderBase gameObjectWeatherProvider = GetComponent<WeatherProviderBase>();
+                if (gameObjectWeatherProvider)
+                {
+                    weatherProvider = gameObjectWeatherProvider;
+                }
+            }
+
+            // Register with the TimeAndWeatherManager
+            if (timeProvider)
+            {
+                timeProvider.TimeAndWeatherManager = this;
+            }
+
+            // Register with the TimeAndWeatherManager
+            if (weatherProvider)
+            {
+                weatherProvider.TimeAndWeatherManager = this;
+            }
+
+            if (Application.isPlaying)
+            {
+                // Subscribe to events
+                weatherProvider.onWeatherPresetAppliedEvent.AddListener(OnWeatherPresetAppliedProxy);
+                timeProvider.onTimePresetAppliedEvent.AddListener(OnTimePresetAppliedProxy);
+                timeProvider.onHourPassedEvent.AddListener(OnHourPassedProxy);
+                timeProvider.onMinutePassedEvent.AddListener(OnMinutePassedProxy);
+            }
         }
 
         /// <summary>
@@ -139,10 +172,13 @@ namespace DaftAppleGames.TimeAndWeather.Core
         /// </summary>
         private void OnDisable()
         {
-            weatherProvider.onWeatherPresetAppliedEvent.RemoveListener(OnWeatherPresetAppliedProxy);
-            timeProvider.onTimePresetAppliedEvent.RemoveListener(OnTimePresetAppliedProxy);
-            timeProvider.onHourPassedEvent.RemoveListener(OnHourPassedProxy);
-            timeProvider.onMinutePassedEvent.RemoveListener(OnMinutePassedProxy);
+            if (Application.isPlaying)
+            {
+                weatherProvider.onWeatherPresetAppliedEvent.RemoveListener(OnWeatherPresetAppliedProxy);
+                timeProvider.onTimePresetAppliedEvent.RemoveListener(OnTimePresetAppliedProxy);
+                timeProvider.onHourPassedEvent.RemoveListener(OnHourPassedProxy);
+                timeProvider.onMinutePassedEvent.RemoveListener(OnMinutePassedProxy);
+            }
         }
 
         /// <summary>

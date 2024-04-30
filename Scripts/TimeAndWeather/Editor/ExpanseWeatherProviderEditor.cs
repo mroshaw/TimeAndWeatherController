@@ -34,6 +34,13 @@ namespace DaftAppleGames.TimeAndWeather.Editor
                     MessageType.Error);
             }
 
+            if (timeAndWeatherManager && !timeAndWeatherManager.interpolatorPrimerPreset)
+            {
+                EditorGUILayout.HelpBox(
+                    "No Primer Preset selected! Pick a weather preset that will act as the 'primer' for the the initial cloud interpolation.",
+                    MessageType.Error);
+            }
+
 #if ODIN_INSPECTOR
             DrawDefaultInspector();
 #else

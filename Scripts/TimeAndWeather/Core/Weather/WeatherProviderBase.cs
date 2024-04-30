@@ -35,15 +35,22 @@ namespace DaftAppleGames.TimeAndWeather.Core.Weather
         public bool IsIntransition => _isInTransition;
 
         /// <summary>
+        /// Set bool to prepare for first transition
+        /// </summary>
+        private void Awake()
+        {
+            _isInTransition = false;
+        }
+
+        /// <summary>
         /// To save time later, iterate over all possible prefabs associated to possible weather presets and
         /// instantiate them and parent to the Main Camera. These can then be activated, deactivated and lerps by
         /// accessiing them by preset name from the two Dictionaries.
         /// </summary>
-        private void Awake()
+        private void Start()
         {
             _mainCamera = Camera.main;
             InstantiateFxPrefabs();
-            _isInTransition = false;
         }
 
         /// <summary>
